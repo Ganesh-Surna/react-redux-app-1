@@ -1,13 +1,13 @@
 import classes from './Counter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { counterActions } from '../store';
+import { counterActions } from '../store/counter-slice';
 
 const Counter = () => {
 
   const dispatch=useDispatch();
 
-  const count=useSelector((state)=>state.count);
-  const isShowCounter=useSelector((state)=>state.isShowCounter);
+  const count=useSelector((state)=>state.counterKey.count);
+  const isShowCounter=useSelector((state)=>state.counterKey.isShowCounter);
 
   const handleIncrement=()=>{
     dispatch(counterActions.increment());  //{type:"some_unique_id"}
